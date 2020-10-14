@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC95CD49DB231255758FAC46 /* Pods_Core_Animations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1336A9B452279CE350858B42 /* Pods_Core_Animations.framework */; };
 		E98C0F5D25371AED0076419B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C0F5C25371AED0076419B /* AppDelegate.swift */; };
 		E98C0F5F25371AED0076419B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C0F5E25371AED0076419B /* SceneDelegate.swift */; };
 		E98C0F6125371AED0076419B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98C0F6025371AED0076419B /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1336A9B452279CE350858B42 /* Pods_Core_Animations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core_Animations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F60153A62F7F2D39A4AEB97 /* Pods-Core Animations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core Animations.release.xcconfig"; path = "Target Support Files/Pods-Core Animations/Pods-Core Animations.release.xcconfig"; sourceTree = "<group>"; };
+		A4391CD8A3CC2368C747A754 /* Pods-Core Animations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core Animations.debug.xcconfig"; path = "Target Support Files/Pods-Core Animations/Pods-Core Animations.debug.xcconfig"; sourceTree = "<group>"; };
 		E98C0F5925371AED0076419B /* Core Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98C0F5C25371AED0076419B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E98C0F5E25371AED0076419B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC95CD49DB231255758FAC46 /* Pods_Core_Animations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		248CC2DDF667DF535779AD1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4391CD8A3CC2368C747A754 /* Pods-Core Animations.debug.xcconfig */,
+				4F60153A62F7F2D39A4AEB97 /* Pods-Core Animations.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D673759BAE7E20429EBA7D20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1336A9B452279CE350858B42 /* Pods_Core_Animations.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E98C0F5025371AED0076419B = {
 			isa = PBXGroup;
 			children = (
 				E98C0F5B25371AED0076419B /* Core Animations */,
 				E98C0F5A25371AED0076419B /* Products */,
+				248CC2DDF667DF535779AD1B /* Pods */,
+				D673759BAE7E20429EBA7D20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E98C0F6D25371AF00076419B /* Build configuration list for PBXNativeTarget "Core Animations" */;
 			buildPhases = (
+				1FAF70FA6D3257D506F28EC9 /* [CP] Check Pods Manifest.lock */,
 				E98C0F5525371AED0076419B /* Sources */,
 				E98C0F5625371AED0076419B /* Frameworks */,
 				E98C0F5725371AED0076419B /* Resources */,
+				95FE2F1AE8302294E29A6B6D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FAF70FA6D3257D506F28EC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Core Animations-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95FE2F1AE8302294E29A6B6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Core Animations/Pods-Core Animations-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Core Animations/Pods-Core Animations-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Core Animations/Pods-Core Animations-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E98C0F5525371AED0076419B /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		E98C0F6E25371AF00076419B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4391CD8A3CC2368C747A754 /* Pods-Core Animations.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -294,12 +364,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.steve.bernard.Core-Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E98C0F6F25371AF00076419B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F60153A62F7F2D39A4AEB97 /* Pods-Core Animations.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.steve.bernard.Core-Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
